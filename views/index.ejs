@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Comparator V0.8</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid padding-xs" style="background-color: #5cb85c; padding:2vh;">
+    <center>
+      <h2>Weather Comparator v0.8</h2>
+    </center>
+  </div>
+
+  <div class="container-fluid jumbotron" style="text-align: center;">
+    <center><h4><b>Please input 3 cities of your choice...</b></h4></center> <br>
+    <form id="myForm" class="form-inline" action="/search" method="post" style="margin: auto; width: 60%; display: block;">
+      <div class="container-fluid row" style="text-align: center;">
+        <div class="col-md-4"> <input name="city1" type="text" class="form-control" placeholder="Enter a City" required> </div>
+        <div class="col-md-4"> <input name="city2" type="text" class="form-control" placeholder="Enter a City" required> </div>
+        <div class="col-md-4"> <input name="city3" type="text" class="form-control" placeholder="Enter a City" required> </div>
+      </div><br>
+      <!-- <div class="col-sm-3"> -->
+      <button type="submit" class="btn btn-info btn-block"><b>Submit</b></button>
+      <!-- </div> -->
+
+    </form>
+  </div>
+
+  <% if(city0 !== null){ %>
+    <div class="container-fluid text-center">
+      <% include graph.ejs %>
+    </div><br>
+      <div class="container-fluid text-center">
+        <% include table.ejs %> </div>
+
+        <% } %>
+
+      </body>
+
+
+
+      <% include footer.ejs %>
+
+      <script>
+      window.onload = function(){
+        <% if(badnames == 1){ %>
+          alert('Error! Please insert valid city names.');
+          <% } %>
+        }
+
+        </script>
+
+
+        </html>

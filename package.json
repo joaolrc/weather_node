@@ -1,0 +1,31 @@
+{
+  "name": "weather-comparatorv3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaolrc/weather_node.git"
+  },
+  "keywords": [
+    "weather",
+    "nodejs"
+  ],
+  "author": "Joao Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaolrc/weather_node/issues"
+  },
+  "homepage": "https://github.com/joaolrc/weather_node#readme",
+  "dependencies": {
+    "async": "^2.6.2",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "winston": "^3.2.1"
+  }
+}

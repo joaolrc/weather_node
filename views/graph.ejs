@@ -1,0 +1,145 @@
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+  let myChart = document.getElementById('myChart').getContext('2d');
+  // myChart.canvas.width = 10000;
+  // myChart.canvas.height = 10000;
+
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Lato';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#777';
+
+  let massPopChart = new Chart(myChart, {
+    type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+    data:{
+      labels:[
+        <% if(city0 !== null && typeof city0 !== 'undefined'){ %>
+          '<%= city0%>'
+          <% }else{ %>
+            '<%= 0%>'
+            <%  } %>
+
+            <% if(error !== null){ %>
+              <%= error %>
+              <% } %>,
+              // 'braga',
+
+              <% if(city1 !== null){ %>
+                '<%= city1%>'
+                <% } %>
+
+                <% if(error !== null){ %>
+                  <%= error %>
+                  <% } %>,
+
+                  <% if(city2 !== null){ %>
+                    '<%= city2%>'
+                    <% } %>
+
+                    <% if(error !== null){ %>
+                      <%= error %>
+                      <% } %>,
+                    ],
+                    datasets:[{
+                      label:'Temperature (ºC)',
+                      data:[
+                        <% if(temp0 !== null){ %>
+                          <%= temp0 %>
+                          <% } %>
+
+                          <% if(error !== null){ %>
+                            <%= error %>
+                            <% } %>,
+
+                            <% if(temp1 !== null){ %>
+                              <%= temp1 %>
+                              <% } %>
+
+                              <% if(error !== null){ %>
+                                <%= error %>
+                                <% } %>,
+
+                                <% if(temp2 !== null){ %>
+                                  <%= temp2 %>
+                                  <% } %>
+
+                                  <% if(error !== null){ %>
+                                    <%= error %>
+                                    <% } %>,
+                                  ],
+                                  //backgroundColor:'green',
+                                  backgroundColor:[
+                                    'rgba(255, 99, 132, 0.6)',
+                                    'rgba(54, 162, 235, 0.6)',
+                                    'rgba(255, 206, 86, 0.6)',
+                                  ],
+                                  borderWidth:1,
+                                  borderColor:'#777',
+                                  hoverBorderWidth:3,
+                                  hoverBorderColor:'#000'
+                                }]
+                              },
+                              options:{
+                                title:{
+                                  display:false,
+                                  text:'Current Temperature by city',
+                                  fontSize:25
+                                },
+
+                                scales: {
+                                  xAxes: [{
+                                    display: true,
+                                    scaleLabel: {
+                                      display: true,
+                                      labelString: 'City'
+                                    }
+                                  }],
+                                  yAxes: [{
+                                    display: true,
+                                    scaleLabel: {
+                                      display: true,
+                                      labelString: 'Temperature (ºC)'
+                                    },
+                                    ticks: {
+                                      // beginAtZero: true,
+                                      steps: 10,
+                                      stepValue: 5,
+                                      suggestedMin: 0,
+                                      suggestedMax: 40,
+                                      // // max: 100
+                                    }
+                                  }]
+                                },
+
+                                legend:{
+                                  display:false,
+                                  position:'right',
+                                  labels:{
+                                    fontColor:'#000'
+                                  }
+                                },
+                                layout:{
+                                  padding:{
+                                    left:50,
+                                    right:0,
+                                    bottom:0,
+                                    top:0
+                                  }
+                                },
+                                tooltips:{
+                                  enabled:true
+                                }
+                              }
+                            });
+                            </script>
+                          </body>
+                          </html>
