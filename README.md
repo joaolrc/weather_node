@@ -11,7 +11,7 @@ This was my first nodeJS application and all the data is requested from https://
 
 ### Frameworks used:
 1. Express - mostly for routing;
-2. body-barser - for parasing JSON requests;
+2. body-barser - for parsing JSON requests;
 3. winston - to make a log record of the requests;
 4. async - to make multiple assynchronous requests;
 5. Charts.js - to make the bar chart;
