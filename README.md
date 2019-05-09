@@ -20,6 +20,6 @@ This was my first nodeJS application and all the data is requested from https://
 6. Type the 3 cities you want and submit the request.
 
 <p align="center">
-<img src="preview2.PNG" width="600px">
+<img src="preview3.PNG" width="600px">
  <figcaption> <p align="center">Fig. 1 - Preview of the WEB app </p></figcaption>
  </p>
