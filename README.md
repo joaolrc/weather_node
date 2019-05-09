@@ -3,6 +3,12 @@
 This repository contains a webpage based in nodeJS, wich allows the user to introduce 3 city names and compare some related data, namely, the current weather, sunrise time and sunset time.
 This was my first nodeJS application and all the data is requested from https://openweathermap.org/, by means of an internal API. The view engine used is EJS.
 
+<p align="center">
+<img src="preview3.PNG" width="600px">
+ <figcaption> <p align="center">Fig. 1 - Preview of the WEB app </p></figcaption>
+ </p>
+
+
 ### Frameworks used:
 1. Express - mostly for routing;
 2. body-barser - for parasing JSON requests;
@@ -18,8 +24,3 @@ This was my first nodeJS application and all the data is requested from https://
 4. The app will listen on Port 3000 (make sure you have it avaliable);
 5. Open browser and go to "localhost:3000";
 6. Type the 3 cities you want and submit the request.
-
-<p align="center">
-<img src="preview3.PNG" width="600px">
- <figcaption> <p align="center">Fig. 1 - Preview of the WEB app </p></figcaption>
- </p>
