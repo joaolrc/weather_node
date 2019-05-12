@@ -15,7 +15,8 @@ This was my first nodeJS application and all the data is requested from https://
 3. winston - to make a log record of the requests;
 4. async - to make multiple assynchronous requests;
 5. Charts.js - to make the bar chart;
-6. In order to make the table sortable, i used a library that you can find [here](https://www.kryogenix.org/code/browser/sorttable/).
+6. Bootstrap - To improve the views and make them more fancy;
+7. In order to make the table sortable, i used a library that you can find [here](https://www.kryogenix.org/code/browser/sorttable/).
 
 ### How to use the application:
 1. Clone the repository to your machine;
