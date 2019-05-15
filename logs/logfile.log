@@ -25,3 +25,11 @@
 [2019-5-9 21:26:37] 200 ; paris , london , aveiro
 [2019-5-9 21:29:58] 200 ; paris , london , aveiro
 [2019-5-11 00:43:57] 200 ; aveiro , braga , toronto
+[2019-5-15 22:29:58] 200 ; london , porto , braga
+[2019-5-15 22:30:58] 200 ; aveiro , paris , london
+[2019-5-15 22:31:30] 200 ; aveiro , paris , london
+[2019-5-15 22:31:34] 200 ; aveiro , paris , london
+[2019-5-15 22:31:51] 404 ; ads , asfasfd , affdasg
+[2019-5-15 22:32:35] 404 ; ads , asfasfd , affdasg
+[2019-5-15 22:32:51] 200 ; aveiro , braga , porto
+[2019-5-15 22:35:07] 200 ; aveiro , porto , braga

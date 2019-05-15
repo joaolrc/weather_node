@@ -46,23 +46,23 @@ app.get('/', function (req, res) {
       console.log(element);
       request(element,  //elemento do array
         function (e, r, body) {
+          req_data[counter] = JSON.parse(body);
           try{
-            console.log(JSON.parse(body).cod);
-            if(JSON.parse(body).cod=='200'){
-              req_data[counter] = JSON.parse(body);
-              temp[counter]=JSON.parse(body).main.temp; //array com temperaturas
-              sunrise[counter]=JSON.parse(body).sys.sunrise; //array com amanhecer
-              sunset[counter]=JSON.parse(body).sys.sunset;  //array com por do sol
+            console.log(req_data[counter].cod);
+            if(req_data[counter].cod=='200'){
+              temp[counter]=req_data[counter].main.temp; //array com temperaturas
+              sunrise[counter]=req_data[counter].sys.sunrise; //array com amanhecer
+              sunset[counter]=req_data[counter].sys.sunset;  //array com por do sol
               daterise[counter]=new Date(sunrise[counter]*1000);
               daterise[counter]=daterise[counter].getHours() + ":" + daterise[counter].getMinutes() + ' ' + daterise[counter].toString().substr(34,40);
               dateset[counter]=new Date(sunset[counter]*1000);
               lastPart[counter] = dateset[counter].toString().substr(34,40);
               dateset[counter]=dateset[counter].getHours() + ":" + dateset[counter].getMinutes() + ' ' + dateset[counter].toString().substr(34,40);
-              city[counter]=JSON.parse(body).name;  //array com por do sol
+              city[counter]=req_data[counter].name;  //array com por do sol
               counter++;
               done();
               if(counter==3){ //corre 1 vez no fim do ultimo request
-                logger.info(JSON.parse(body).cod+' ; '+city1+' , '+city2+' , '+city3); //log message
+                logger.info(req_data[counter].cod+' ; '+city1+' , '+city2+' , '+city3); //log message
                 res.render('index', {badnames:badnames, error: null, temp0: temp[0], temp1: temp[1], temp2: temp[2], city0:city[0], city1:city[1], city2:city[2],
                   sunrise0:sunrise[0], sunrise1:sunrise[1], sunrise2:sunrise[2], sunset0:sunset[0], sunset1:sunset[1], sunset2:sunset[2],
                   daterise0:daterise[0], daterise1:daterise[1], daterise2:daterise[2],dateset0:dateset[0], dateset1:dateset[1],  dateset2:dateset[2] });
@@ -70,7 +70,7 @@ app.get('/', function (req, res) {
               }else{
                 counter++;
                 if(counter==3){
-                  logger.info(JSON.parse(body).cod+' ; '+city1+' , '+city2+' , '+city3); //log message
+                  logger.info(req_data[counter].cod+' ; '+city1+' , '+city2+' , '+city3); //log message
                   badnames=1;
                   res.render('index', {badnames:badnames, error: null, temp0: null, temp1: null, temp2: null, city0:null, city1:null, city2:null,
                     sunrise0:null, sunrise1:null, sunrise2:null, sunset0:null, sunset1:null, sunset2:null,
